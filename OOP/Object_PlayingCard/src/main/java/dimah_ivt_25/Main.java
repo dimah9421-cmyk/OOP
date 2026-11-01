@@ -42,9 +42,11 @@ public class Main {
         IO.println("Вся колода:");
         // Вывод массива
         for (int i = 0; i < 36; i++) {
-            // get() - метод для поссылочнму обращению к элементу динамического списка ArrayList
+            // get() - метод для поссылочному обращению к элементу динамического списка ArrayList
             IO.println(deck.get(i).toString());
-            filework.print_el_array_in_file("array.txt", deck.get(i));
         }
+        filework.clear_file_open_array("array.txt");    //
+        filework.print_el_array_in_file("array.txt", deck);
+
     }
 }
