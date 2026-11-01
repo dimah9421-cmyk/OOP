@@ -3,9 +3,12 @@ package dimah_d_ivt_25;
  * задание №136 о
  */
 
+import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;   // Подключение типа Scanner для считывания данных из консоли
 
 import static dimah_d_ivt_25.Calc.Sum_sqrt; // Подключение метода \ функции из написанной библиотеки
+import static dimah_d_ivt_25.Calc.Sum_sqrt_al;
 
 public class Main {
 
@@ -28,26 +31,26 @@ public class Main {
                 for (double i : lats_arrayy)    // Вывод массива при прошлом запуске
                     System.out.printf("%.3f ", i);
                 // Вывод предыдущего результата вычислений
-                System.out.printf("\nСумма равная %.3f\n", Calc.Sum_sqrt(lats_arrayy));
+                System.out.printf("\nСумма равная %.3f\n", Sum_sqrt(lats_arrayy));
             }
         }
         // Если не передано ни одного аргумента при запуске программы
         else if (args.length == 0) {
 
-            double[] lats_array = works_file.read_file("open_array.txt");
-
-            if (lats_array.length != 0){
+            ArrayList <Double> last_arraylist = new ArrayList<Double>();
+            last_arraylist = works_file.read_file_to_Arraylist("open_array.txt");
+            if (last_arraylist.size() != 0){
                 System.out.println("Предыдущий расчет:");
-                for (double i: lats_array)
+                for (double i: last_arraylist)
                     System.out.printf("%.3f ",i);
-                System.out.printf("\nСумма равная %.3f\n",Calc.Sum_sqrt(lats_array));
+                System.out.printf("\nСумма равная %.3f\n", Sum_sqrt_al(last_arraylist));
                 works_file.clear_file_open_array("open_array.txt"); // Функция для очистки файла (в файле только последние программы)
             }
             int n = 0;
             System.out.print("Введите n = ");
             try {                   // Часть кода которая проверяется
                 n = sc.nextInt();   // Присвоение данных из консоли в переменную n
-            }catch (java.util.InputMismatchException e) {   // Часть кода которая выполняется при ошибке
+            }catch (InputMismatchException e) {   // Часть кода которая выполняется при ошибке
                 System.out.println("Ошибка: n должно быть целым числом числом");
                 System.exit(1); // Полное завершение программы
             }
@@ -82,7 +85,7 @@ public class Main {
                 for (int i = 0; i < args.length; i++)       // Цикл для копирования данных из консоли в созданный массив
                     array[i] = Double.parseDouble(args[i]); // Преобразование строки (args - строка) в вещественные числа
 
-                double S = Calc.Sum_sqrt(array);    // Вычисления по заданию
+                double S = Sum_sqrt(array);    // Вычисления по заданию
 
                 works_file.print_el_array_in_file("open_array.txt",array);   // Сохранения данных их данного запуска
 

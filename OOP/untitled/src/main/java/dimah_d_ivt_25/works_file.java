@@ -3,6 +3,7 @@ package dimah_d_ivt_25;
 // Подключение библиотек или методов
 import java.io.IOException;     // Основной класс ошибки связанный со считыванием данных
 import java.io.PrintWriter;     // Класс для записи данных в файл
+import java.util.ArrayList;
 import java.util.Scanner;       // Класс для считывания данных
 import java.io.File;            // Класс для определения файлы для работы с ним
 import java.io.FileNotFoundException;   // Класс об ошибке при работе с файлом(файл не найден или нет доступа)
@@ -91,6 +92,23 @@ public class works_file {
         } catch (FileNotFoundException e) { // Аналогичная обработка ошибки, что и выше
             System.out.println("Файл для чтения не найден!");
             return new double[0];
+        }
+    }
+
+    /// Функция для считывания массива в ArrayList из txt файла
+    /// Функция может вызвать исключение если не доступа к файлу
+    /// @return либо считанный массив, либо пустой массив
+    /// Возможно исключение throws IOException
+    static ArrayList<Double> read_file_to_Arraylist(String filename1){
+        ArrayList<Double> array = new ArrayList<Double>();
+        try (Scanner sc = new Scanner(new File(filename1))) {
+            while (sc.hasNextDouble()) {
+                array.add(sc.nextDouble());
+            }
+            return array;   // Возврат заполненного массива
+        } catch (FileNotFoundException e) { // Аналогичная обработка ошибки, что и выше
+            System.out.println("Файл для чтения не найден!");
+            return null;
         }
     }
 }
