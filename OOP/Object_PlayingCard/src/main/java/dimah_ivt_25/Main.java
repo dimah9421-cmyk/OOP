@@ -1,6 +1,7 @@
 package dimah_ivt_25;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Main {
     static void main(String[] args) {
@@ -27,17 +28,8 @@ public class Main {
         } catch (IllegalArgumentException e){   // Проверка исключения неверных данных
             IO.println(e.toString());
         }
-        // Создаем динамический массив типа Playing_card
-        ArrayList<Playing_card> deck = new ArrayList<Playing_card>();
-
-        for (int suit = 1; suit <= 4; suit++) {          // Цикл по 4 мастям
-            for (int power = 6; power <= 14; power++) {  // Цикл по мощности от 6 до Туза (14)
-                Playing_card card = new Playing_card();  // Создаем объект
-                card.setSuit_cart(suit);                 // Заполняем поле масти нашей карты
-                card.setCart_power(power);               // Заполняем поле мощности нашей карты
-                deck.add(card);  // Добавляем в конец списка значения переменной card
-            }
-        }
+        // Массив со всей колодой (по очереди)
+        ArrayList<Playing_card> deck = new work_to_Playingcards().getDeck();
 
         IO.println("Вся колода:");
         // Вывод массива
@@ -45,6 +37,14 @@ public class Main {
             // get() - метод для поссылочному обращению к элементу динамического списка ArrayList
             IO.println(deck.get(i).toString());
         }
+        // Начальные карты для игры (6 радомных карт)
+        ArrayList<Playing_card> Cards_for_game = new work_to_Playingcards().get_start_cards(deck);
+
+        IO.println("\nВыданные карты");
+        for (Playing_card card: Cards_for_game) {
+            IO.println(card.toString());
+        }
+
         filework.clear_file_open_array("array.txt");    //
         filework.print_el_array_in_file("array.txt", deck);
 
