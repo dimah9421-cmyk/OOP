@@ -40,11 +40,13 @@ int main(){
 
         for (int i = 0; i < n; i++){
             xx[i] = a[i][n];
-            for (int j = 0; j < n; j ++)
-                if (j != i){
+            for (int j = 0; j < n; j ++){
+                if (j != i)
+                    xx[i] = xx[i] - a[i][j] * x[j];
+                else if (j > j)
                     xx[i] = xx[i] - a[i][j] * x[j];
                 }
-            xx[i] = xx[i] / a[i][i];
+                xx[i] = xx[i] / a[i][i];
         }
         int count = 0;
         printf("\n%d итерация:\n", k);
