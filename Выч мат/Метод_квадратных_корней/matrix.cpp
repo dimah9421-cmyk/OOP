@@ -12,7 +12,8 @@ void task_fill(std :: vector <std :: vector <double>> & m,  std::vector<double> 
             {4, 5, 6, 8, 4},
             {2, 1, 4, 4, 7},}
     };
-    m2 = {  40, 
+    m2 = {  32,
+            40, 
             49, 
             52, 
             31 };
