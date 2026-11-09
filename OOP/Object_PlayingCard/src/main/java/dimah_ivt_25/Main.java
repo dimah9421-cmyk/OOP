@@ -54,10 +54,11 @@ public class Main {
         filework.clear_file_open_array("Колода.txt");    //
         filework.print_el_array_in_file("Колода.txt", deck);
 
+        // Создание автоматического массива из объектов Playing_card
         Playing_card[] deck1 = new Playing_card[3];
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) {   // Запись в массив 3 карты валета пики
             deck1[i] = new Playing_card(2,12);
         }
-        deck1[0].setSuit_cart(1);
+        deck1[0].setSuit_cart(1);   // Замена первой карты в массиве на вальта крести
     }
 }
