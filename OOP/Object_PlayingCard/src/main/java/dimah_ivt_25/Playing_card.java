@@ -94,6 +94,6 @@ public class Playing_card {
             case 14: Cart_power1 = "Туз";   break;
         }
 
-        return String.format("Цвет %s; Масть %s; Карта %s", Color1, Suit_cart1, Cart_power1);
+        return String.format("Масть %s; Карта %s; Цвет %s;", Color1, Suit_cart1, Cart_power1);
     }
 }

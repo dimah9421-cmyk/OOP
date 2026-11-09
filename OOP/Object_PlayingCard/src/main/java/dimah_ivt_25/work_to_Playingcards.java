@@ -25,18 +25,24 @@ public class work_to_Playingcards {
     ///
     /// @return заполненный массив
     public ArrayList<Playing_card> get_start_cards(ArrayList<Playing_card> deck) {
+
+        if (deck == null || deck.size() < 6)
+            return new ArrayList<Playing_card>();
+
         Random rand = new Random(); // Инициализация генератора псевдо-случайныйх чисел
         ArrayList<Playing_card> Cards_for_game = new ArrayList<Playing_card>();
         while (Cards_for_game.size() < 6) {
             // Генерируем случайный индекс в пределах размера колоды (0 до 35)
-            int randomIndex = rand.nextInt(deck.size());
-            Playing_card randomCard = deck.get(randomIndex);
+            int randInd = rand.nextInt(deck.size());
+            Playing_card randCard = deck.get(randInd);
 
             // Проверяем, нет ли уже этой карты у игрока в руке
-            if (!deck.contains(randomCard)) {
-                deck.add(randomCard);
+            if (!Cards_for_game.contains(randCard)) {
+                // contains - метод проверяет есть ли уже подобный элемент в arraylist-е
+                // если есть, то возвращает 1, если нет то 0
+                Cards_for_game.add(randCard);
             }
         }
-        return Cards_for_7ujhukgame;
+        return Cards_for_game;
     }
 }

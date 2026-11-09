@@ -45,8 +45,13 @@ public class Main {
             IO.println(card.toString());
         }
 
-        filework.clear_file_open_array("array.txt");    //
-        filework.print_el_array_in_file("array.txt", deck);
+        filework.clear_file_open_array("Колода.txt");    //
+        filework.print_el_array_in_file("Колода.txt", deck);
 
+        Playing_card[] deck1 = new Playing_card[3];
+        for (int i = 0; i < 3; i++) {
+            deck1[i] = new Playing_card(2,12);
+        }
+        deck1[0].setSuit_cart(1);
     }
 }
