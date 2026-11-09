@@ -4,8 +4,14 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
+    static void asserts(){
+        Playing_card card = new Playing_card(1,10);
+        assert card.getCart_color() == ("Черный"): "Ошибка: Неверный цвет карты";
+        assert card.getCart_power() == 10: "Ошибка: Неверная мощность карты";
+        assert card.getSuit_cart() == 1: "Ошибка: Неверная масть карты";
+    }
     static void main(String[] args) {
-
+        asserts();
         // card1 -- ссылка на объект
         Playing_card card1;
         // card2 -- ссылка на объект (объектов пока нет)
