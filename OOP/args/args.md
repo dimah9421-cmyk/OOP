@@ -2,28 +2,30 @@
 
 `args` — это просто имя переменной (сокращение от _arguments_), которая представляет собой ****массив строк****. Все параметры, которые вы вводите в терминале после имени класса, автоматически упаковываются в этот массив.
 
-![](file:///C:/Users/AACE~1/AppData/Local/Temp/lu115768mhkpt.tmp/lu115768mhkqi_tmp_d9fc9a23.png)  
-  
+![](file:///C:/Users/AACE~1/AppData/Local/Temp/lu205248mlorh.tmp/lu205248mlors_tmp_d9fc9a23.png)  
 
 Static void main**(Srting[] args) -** нужен, чтобы пользователь мог передать программе любые параметры прямо в момент запуска через консоль.(прописывается в аргумент главной функции программы)
 
 В программном коде на языке java args можно использовать так:
 
-![](file:///C:/Users/AACE~1/AppData/Local/Temp/lu115768mhkpt.tmp/lu115768mhkqi_tmp_f8b05f24.png)
+![](file:///C:/Users/AACE~1/AppData/Local/Temp/lu205248mlorh.tmp/lu205248mlors_tmp_f8b05f24.png)
 
 Тогда при запуске программы с аргументом «--help» или «help» на вывод пойду сообщения пользователю:
 
-![](file:///C:/Users/AACE~1/AppData/Local/Temp/lu115768mhkpt.tmp/lu115768mhkqi_tmp_6c2f02dd.png)Также в коде можно реализовать запуск с передачей сразу всех аргументов нужных программе для работы:
+![](file:///C:/Users/AACE~1/AppData/Local/Temp/lu205248mlorh.tmp/lu205248mlors_tmp_6c2f02dd.png)Также в коде можно реализовать запуск с передачей сразу всех аргументов нужных программе для работы:
 
-![](file:///C:/Users/AACE~1/AppData/Local/Temp/lu115768mhkpt.tmp/lu115768mhkqi_tmp_c29d4768.png)  
+![](file:///C:/Users/AACE~1/AppData/Local/Temp/lu205248mlorh.tmp/lu205248mlors_tmp_c29d4768.png)  
+
 
 То есть при запуске программы после самой команды запуска передаются аргументы через пробел:
 
-![](file:///C:/Users/AACE~1/AppData/Local/Temp/lu115768mhkpt.tmp/lu115768mhkqi_tmp_7e358b9.png)
+![](file:///C:/Users/AACE~1/AppData/Local/Temp/lu205248mlorh.tmp/lu205248mlors_tmp_7e358b9.png)  
+  
 
 Необходимо сделать вариант работы программы без передачи аргументов при запуске:
 
-![](file:///C:/Users/AACE~1/AppData/Local/Temp/lu115768mhkpt.tmp/lu115768mhkqi_tmp_d31c33de.png)  
+![](file:///C:/Users/AACE~1/AppData/Local/Temp/lu205248mlorh.tmp/lu205248mlors_tmp_d31c33de.png)  
+  
 
 В этом случае работа с программой идет по алгоритму как и без args
 
